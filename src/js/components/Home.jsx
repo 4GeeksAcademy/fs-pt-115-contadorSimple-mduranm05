@@ -7,12 +7,12 @@ import PropTypes from "prop-types";
 //create your first component
 const bigCounterDiv = {
 	display: "inline-block",
-	fontSize: "60px",
-	lineHeight: "60px",
+	fontSize: "80px",
+	lineHeight: "80px",
 	background: "#101010",
 	color: "white",
-	padding: "10px",
-	margin: "3px"
+	padding: "20px",
+	margin: "5px"
 }
 const Home = (props) => {
 	return (
