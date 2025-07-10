@@ -2,27 +2,38 @@ import React from "react";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
+import PropTypes from "prop-types";
 
 //create your first component
-const Home = () => {
+const bigCounterDiv = {
+	display: "inline-block",
+	fontSize: "60px",
+	lineHeight: "60px",
+	background: "#101010",
+	color: "white",
+	padding: "10px",
+	margin: "3px"
+}
+const Home = (props) => {
 	return (
-		<div className="text-center">
-            
+		<div className="bigCounter" style={{ textAlign: "center", background: "black" }}>
+			<div className="clock" style={bigCounterDiv}>
+				<i className="fa-regular fa-clock"></i>
+			</div>
+			<div className="four" style={bigCounterDiv}>{props.digiFour % 10}</div>
+			<div className="three" style={bigCounterDiv}>{props.digiThree % 10}</div>
+			<div className="two" style={bigCounterDiv}>{props.digiTwo % 10}</div>
+			<div className="one" style={bigCounterDiv}>{props.digiOne % 10}</div>
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
 		</div>
 	);
 };
+Home.protType = {
+  digiFour: PropTypes.number,
+  digiThree: PropTypes.number,
+  digiTwo: PropTypes.number,
+  digiOne: PropTypes.number,
+}
+
 
 export default Home;
